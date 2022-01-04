@@ -1,9 +1,29 @@
 import React from "react"
 import { Square } from "./Square"
+import { ChessStates } from "../interface"
 
 export class Board extends React.Component {
+    state: ChessStates
+
+    constructor(props :any) {
+        super(props)
+        this.state = {
+            squares: Array(9).fill(null)
+        }
+    }
+
+    handleClick(i: number) {
+        const squares = this.state.squares.slice()
+        squares[i] = 'X'
+        this.setState({ squares })
+    }
+
     renderSquare(i: number) {
-        return <Square value={i} />
+        return (
+            <Square
+                value={this.state.squares[i]}
+                onClick={() => this.handleClick(i)}
+        />)
     }
 
     render() {

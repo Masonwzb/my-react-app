@@ -1,23 +1,14 @@
 import React from "react"
-import { SquareComponentProps, ChessType } from "../interface"
+import { SquareComponentProps } from "../interface"
 
-export class Square extends React.Component<SquareComponentProps<number>> {
-    state:ChessType
-
-    constructor(props: SquareComponentProps<number>) {
-        super(props);
-        this.state = {
-            value: '',
-        }
-    }
-
+export class Square extends React.Component<SquareComponentProps<string>> {
     render() {
         return (
             <button
                 className="square"
-                onClick={() => this.setState({ value: 'X' })}
+                onClick={() => this.props.onClick()}
             >
-                { this.state.value }
+                { this.props.value }
             </button>
         )
     }
