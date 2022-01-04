@@ -6,7 +6,7 @@ export class Square extends React.Component<SquareComponentProps<string>> {
         return (
             <button
                 className="square"
-                onClick={() => this.props.onClick()}
+                onClick={this.props.onClick}
             >
                 { this.props.value }
             </button>

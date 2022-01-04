@@ -3,10 +3,20 @@ export interface SquareComponentProps<T> {
     onClick: () => void
 }
 
+export interface BoardComponentProps {
+    squares: Array<string | null>,
+    onClick: (i: number) => void
+}
+
 export interface ChessType {
     value: string
 }
 
-export interface ChessStates {
+type SquareType = {
     squares: Array<string | null>
+}
+
+export interface ChessStates {
+    history: Array<SquareType>,
+    XisNext: boolean
 }
