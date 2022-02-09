@@ -18,5 +18,6 @@ type SquareType = {
 
 export interface ChessStates {
     history: Array<SquareType>,
+    stepNumber: number,
     XisNext: boolean
 }
